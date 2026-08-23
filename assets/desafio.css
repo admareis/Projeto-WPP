@@ -1,0 +1,336 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+body{
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 60px 420px 2fr;
+    grid-template-areas: "nav section main";
+}
+nav{ /*nav separadas por div para espaçar*/
+    background-color: #F7F5F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    grid-area: nav;
+}
+.container-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.container-nav > img{
+    width: 40px;
+    border-radius: 100%;
+    padding: 7px;
+}
+.container-nav>button{
+    border-radius: 100%;
+}
+.container-nav>button>img{
+    width: 40px;
+    border-radius: 100%;
+}
+.container-nav > img:hover{
+    background-color: #a9a9a993;
+}
+.container-form-buttons > input{
+    outline: none;
+}
+.buttons{
+    justify-content: center;
+}
+
+main{
+    background-image: url(./imgs/whatsapp_bg.png);
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    grid-area: main;
+}
+.contatos-container{
+    max-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    grid-area: section;
+}
+.topo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.topo-chat{
+    display: flex;
+}
+.topo-chat > img{
+    width: 30px;
+}
+.topo>h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#5ea516;
+}
+.form{
+    text-align: center;
+}
+.form input{
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: #4243432e;
+    outline: none;
+}
+.form input:focus{
+    border-color:  #5ea516;
+}
+.form > img{
+    width: 10px;
+    border-radius: 100%;
+    padding: 7px;
+}
+.container-form-buttons{
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;  
+}
+.buttons{
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+}
+.buttons button{
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    cursor: pointer;
+}
+.buttons button:hover{
+    background-color: #aad99e77;
+}
+.card{
+    flex: 1;
+    min-width: 0;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px;
+
+}
+.chat{
+    display: grid;    
+    border-radius: 10px;
+    column-gap: 10px;
+    padding: 5px;
+    grid-template-columns: 60px 1fr auto;
+    grid-template-areas: 
+    "foto nome hora"
+    "foto texto notification";
+}
+.chat:hover{
+    background-color: #4243432e;
+    cursor: pointer;
+}
+.foto{
+    grid-area: foto;
+    grid-column: 1;
+    width: 60px;
+    border-radius: 60px;   
+}
+.nome{
+    grid-area: nome;
+    grid-column: 2;
+}
+.texto{
+    grid-area: texto;
+    grid-column: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.hora{
+    grid-area: hora;
+    grid-column: 3;    
+}
+.notification{
+    width: 20px;
+    height: 20px;
+    grid-area: notification;
+    grid-column: 3; 
+    background-color: #5ea516;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.foto-contato{
+    height: 60px;
+    border-radius: 100%;
+}
+
+/* section perfil */
+
+.lista-contatos {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+.container-perfil{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 30px;
+}
+.container>img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.telaPerfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    min-height: 0;
+}
+.oculta {
+    display: none !important;
+}
+.img-perfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.img-perfil > img{  
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+.nav-troca-perfil{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    
+}
+.dados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.perfil > img{
+    width:60px;
+    height: 60px;
+    border-radius: 100%;    
+}
+.lista-perfis{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 20px;
+    gap: 10px;
+}
+
+
+/* main*/
+
+.topo-main{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #F7F5F2;
+    border: 1px solid #eee;
+    padding: 10px;
+    justify-content: space-between;
+}
+.identificador, .header-icons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.identificador>p{
+    font-size: 1.3rem;
+}
+.grid-msg{
+    padding: 10px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.grid-msg>img{
+    width: 20px;
+    height: 20px;
+}
+
+.grid-msg input{
+    width: 100%;
+    padding: 15px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #4243432e;
+    outline: none;
+}
+.grid-msg form {
+    flex: 1;
+}
+#send-msg{
+    background-color: #fff;
+}
+.troca-mensagens{
+    flex: 1;
+    min-height: 0;
+    margin-top: auto;
+    padding: 12px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    overflow-y: auto;
+
+}
+.recebidas>span, .enviadas>span{ /*empurra o horário para o final */
+    float: right;
+    color: #0000007c;
+    padding-top: 1px;
+    padding-left: 5px;
+}
+.recebidas{
+    grid-column: 2/14;
+    width: fit-content; /*ajusta mensagens menores*/
+    background-color: #F7F5F2;
+    row-gap: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    top: 0;
+    left: -2px;
+    border-top: 0px solid #F7F5F2;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+}
+.enviadas{
+    grid-column: 12/24;
+    justify-self: end;
+    width: fit-content; /*ajusta mensagens menores*/
+    background-color: #8fbc8f9f;
+    row-gap: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    top: 0;
+    left: -2px;
+    border-top: 0px solid #8fbc8f9f;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+}
