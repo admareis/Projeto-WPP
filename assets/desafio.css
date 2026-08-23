@@ -301,7 +301,7 @@ main{
     overflow-y: auto;
 
 }
-.recebidas>span, .enviadas>span{ /*empurra o horário para o final */
+.recebidas>span, .enviadas>span{ /*empurra o horário para o final sem precisr criar uma div*/
     float: right;
     color: #0000007c;
     padding-top: 1px;
@@ -309,7 +309,7 @@ main{
 }
 .recebidas{
     grid-column: 2/14;
-    width: fit-content; /*ajusta mensagens menores*/
+    width: fit-content; /* para ajustar mensagens menores*/
     background-color: #F7F5F2;
     row-gap: 10px;
     padding: 5px 10px;
@@ -323,7 +323,9 @@ main{
 .enviadas{
     grid-column: 12/24;
     justify-self: end;
-    width: fit-content; /*ajusta mensagens menores*/
+    max-width: 100%;        /* para nunca passa do tamanho do grid e estourar na coluna do recebidas*/
+    
+    overflow-wrap: anywhere;
     background-color: #8fbc8f9f;
     row-gap: 10px;
     padding: 5px 10px;
